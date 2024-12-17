@@ -1,9 +1,15 @@
 import { NextResponse } from "next/server"
 import { prisma } from "@/lib/prisma"
 
+interface RouteContext {
+  params: {
+    id: string
+  }
+}
+
 export async function POST(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: RouteContext
 ) {
   try {
     const post = await prisma.post.update({
