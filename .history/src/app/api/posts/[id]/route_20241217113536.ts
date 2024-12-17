@@ -1,15 +1,15 @@
 import { NextResponse } from "next/server"
 import { prisma } from "@/lib/prisma"
 
-interface RouteContext {
+interface Context {
   params: {
     id: string
   }
 }
 
 export async function GET(
-  _req: Request,
-  context: RouteContext
+  req: Request,
+  context: Context
 ) {
   try {
     const post = await prisma.post.findUnique({
