@@ -1,0 +1,8 @@
+[
+  {
+    "title": "First Post",
+    "content": "This is the first post content",
+    "user_id": 1
+  }
+  // Add more posts as needed
+] 

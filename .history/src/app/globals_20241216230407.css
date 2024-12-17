@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --header-height: 60px;
+}
+
+html {
+  @apply h-full;
+}
+
+body {
+  @apply h-full;
+}
+
+#root {
+  @apply h-full w-full;
+}
