@@ -9,17 +9,6 @@ interface Props {
   }
 }
 
-// PostCardの型を定義
-interface PostData {
-  id: string
-  title: string
-  summary: string
-  category: string
-  views: number
-  likes: number
-  comments: number
-}
-
 export default async function CategoryPage({ params }: Props) {
   // カテゴリーの存在チェック
   const category = categories.find(c => c.name === decodeURIComponent(params.category))
@@ -52,7 +41,7 @@ export default async function CategoryPage({ params }: Props) {
 
         {/* 投稿一覧 */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {data.posts.map((post: PostData) => (
+          {data.posts.map((post: any) => (
             <PostCard key={post.id} {...post} />
           ))}
         </div>
