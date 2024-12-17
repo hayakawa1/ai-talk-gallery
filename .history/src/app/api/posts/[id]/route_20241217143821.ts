@@ -1,19 +1,13 @@
 import { NextResponse } from "next/server"
 import { prisma } from "@/lib/prisma"
 
-type Props = {
-  params: {
-    id: string
-  }
-}
-
 export async function GET(
-  request: Request,
-  props: Props
+  _req: Request,
+  { params }: { params: { id: string } }
 ) {
   try {
     const post = await prisma.post.findUnique({
-      where: { id: props.params.id },
+      where: { id: params.id },
     })
 
     if (!post) {
@@ -25,7 +19,7 @@ export async function GET(
 
     // ビュー数を増やす
     await prisma.post.update({
-      where: { id: props.params.id },
+      where: { id: params.id },
       data: { views: { increment: 1 } },
     })
 
