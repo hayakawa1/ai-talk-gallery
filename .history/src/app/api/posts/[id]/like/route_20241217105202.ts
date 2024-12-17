@@ -2,12 +2,14 @@ import { NextRequest, NextResponse } from "next/server"
 import { prisma } from "@/lib/prisma"
 
 export async function POST(
-  _request: Request,
-  context: { params: { id: string } }
+  request: NextRequest,
+  { params }: { params: { id: string } }
 ) {
+  const { id } = params
+
   try {
     const post = await prisma.post.update({
-      where: { id: context.params.id },
+      where: { id },
       data: {
         likes: { increment: 1 },
       },
