@@ -10,9 +10,11 @@ const generatePosts = (start: number, count: number) => {
     title: `投稿タイトル ${start + i}`,
     author: `user${start + i}`,
     category: "カテゴリー",
+    thumbnail: "/images/posts/thumbnails/default.jpg",
     createdAt: "2024-03-20",
-    likes: (start + i) * 10,
-    comments: (start + i) * 5,
+    summary: "投稿の要約テキストがここに入ります...",
+    likes: Math.floor(Math.random() * 100),
+    comments: Math.floor(Math.random() * 50),
   }));
 };
 
@@ -39,15 +41,15 @@ export default function Home() {
       </div>
 
       {/* 投稿一覧 */}
-      <div className="space-y-3">
+      <div className="space-y-6">
         {items.map(post => (
           <PostCard key={post.id} post={post} />
         ))}
         
         {/* 無限スクロール用のローディング要素 */}
-        <div ref={observerTarget} className="h-8 flex items-center justify-center">
+        <div ref={observerTarget} className="h-10 flex items-center justify-center">
           {isLoading && (
-            <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-blue-500" />
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500" />
           )}
         </div>
       </div>

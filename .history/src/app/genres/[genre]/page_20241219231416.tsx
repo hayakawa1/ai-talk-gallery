@@ -11,6 +11,7 @@ const generateGenrePosts = (genreName: string, count: number) => {
     title: `${genreName}の投稿 ${i + 1}`,
     author: `user${i + 1}`,
     category: genreName,
+    thumbnail: "/images/posts/thumbnails/default.jpg",
     createdAt: "2024-03-20",
     likes: (i + 1) * 10,
     comments: (i + 1) * 5,
@@ -30,26 +31,13 @@ export default function GenrePage({ params }: { params: { genre: string } }) {
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
       {/* ジャンルヘッダー */}
-      <div className="relative aspect-[21/9] mb-8 rounded-xl overflow-hidden">
-        <Image
-          src={`/images/${genre.name}.webp`}
-          alt={genre.name}
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-          <div className="text-center text-white">
-            <h1 className="text-4xl font-bold mb-4">{genre.name}</h1>
-            <p className="text-lg max-w-2xl mx-auto">{genre.description}</p>
-          </div>
+      <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <h1 className="text-3xl font-bold mb-4">{genre.name}</h1>
+        <p className="text-gray-600 mb-4">{genre.description}</p>
+        <div className="bg-gray-50 p-4 rounded-lg">
+          <h2 className="text-sm font-semibold text-gray-500 mb-2">投稿例</h2>
+          <p className="text-gray-600 italic">「{genre.example}」</p>
         </div>
-      </div>
-
-      {/* 投稿例 */}
-      <div className="bg-white rounded-lg shadow p-4 mb-6">
-        <h2 className="text-sm font-semibold text-gray-500 mb-2">投稿例</h2>
-        <p className="text-gray-600 italic">「{genre.example}」</p>
       </div>
 
       {/* フィルターバー */}

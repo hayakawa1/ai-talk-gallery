@@ -1,9 +1,17 @@
+import { readFileSync } from 'fs';
+import path from 'path';
 import genresData from '../data/genres.json';
+
+export interface Subgenre {
+  name: string;
+  description: string;
+  example: string;
+}
 
 export interface Genre {
   name: string;
   description: string;
-  example: string;
+  subgenres: Subgenre[];
 }
 
 interface GenresData {

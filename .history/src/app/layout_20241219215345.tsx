@@ -32,9 +32,9 @@ export default function RootLayout({
         </header>
 
         {/* メインコンテンツ */}
-        <div className="flex min-h-[calc(100vh-4rem)]">
+        <div className="flex">
           <Sidebar />
-          <main className="flex-1">
+          <main className="flex-1 min-h-screen">
             {children}
           </main>
         </div>

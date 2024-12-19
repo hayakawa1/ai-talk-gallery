@@ -10,7 +10,9 @@ const generatePosts = (start: number, count: number) => {
     title: `投稿タイトル ${start + i}`,
     author: `user${start + i}`,
     category: "カテゴリー",
+    thumbnail: "/images/posts/thumbnails/default.jpg",
     createdAt: "2024-03-20",
+    summary: "投稿の要約テキストがここに入ります...",
     likes: (start + i) * 10,
     comments: (start + i) * 5,
   }));
