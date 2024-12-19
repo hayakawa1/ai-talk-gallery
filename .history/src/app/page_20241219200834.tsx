@@ -46,35 +46,24 @@ export default async function Home() {
   return (
     <div className="container mx-auto px-4 py-8">
       {/* ヒーローセクション */}
-      <div className="relative rounded-xl overflow-hidden mb-8">
-        <div className="aspect-[21/9] relative">
-          <Image
-            src="/images/TOP.webp"
-            alt="AI Talk Gallery"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center">
-            <h1 className="text-4xl font-bold mb-4 text-white">AI Talk Gallery</h1>
-            <p className="text-xl text-white mb-8">
-              AIとの興味深い会話を共有しよう
-            </p>
-            
-            {/* クイック投稿モジュール */}
-            <div className="max-w-2xl w-full mx-auto bg-white/95 backdrop-blur p-6 rounded-lg shadow-lg">
-              <h3 className="text-lg font-semibold mb-4">新しい会話を投稿</h3>
-              <div className="flex gap-4">
-                <input
-                  type="text"
-                  placeholder="タイトルを入力..."
-                  className="flex-1 p-2 border rounded"
-                />
-                <button className="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 transition">
-                  投稿を作成
-                </button>
-              </div>
-            </div>
+      <div className="text-center py-12 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl mb-8">
+        <h1 className="text-4xl font-bold mb-4">AI Talk Gallery</h1>
+        <p className="text-xl text-gray-600 mb-8">
+          AIとの興味深い会話を共有しよう
+        </p>
+        
+        {/* クイック投稿モジュール */}
+        <div className="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-sm">
+          <h3 className="text-lg font-semibold mb-4">新しい会話を投稿</h3>
+          <div className="flex gap-4">
+            <input
+              type="text"
+              placeholder="タイトルを入力..."
+              className="flex-1 p-2 border rounded"
+            />
+            <button className="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 transition">
+              投稿を作成
+            </button>
           </div>
         </div>
       </div>

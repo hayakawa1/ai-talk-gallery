@@ -1,5 +1,4 @@
 import { notFound } from 'next/navigation';
-import Image from 'next/image';
 
 // 仮のデータ取得関数
 const getPost = (id: string) => {
@@ -40,15 +39,6 @@ export default function PostPage({ params }: { params: { id: string } }) {
             <span>📅 {post.createdAt}</span>
           </div>
         </header>
-
-        <div className="relative aspect-video mb-4">
-          <Image
-            src="/images/posts/thumbnails/sample.jpg"
-            alt="投稿のサムネイル"
-            fill
-            className="object-cover rounded-lg"
-          />
-        </div>
 
         <div className="prose max-w-none mb-8">
           {post.content}
